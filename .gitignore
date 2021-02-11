@@ -211,6 +211,7 @@ FakesAssemblies/
 *.plg
 
 # Visual Studio 6 workspace options file
+status.txt
 *.opt
 
 # Visual Studio LightSwitch build output
