@@ -1,0 +1,11 @@
+commit 3f3c19616a24eaee85daa192bfeb2071f411a3eb
+Author: VolodyaZ <vovazherelo1@gmail.com>
+Date:   Thu Feb 11 22:05:47 2021 +0300
+
+    task
+
+commit b75a6865f7ad8d745959542678e630f7f8f2711e
+Author: VolodyaZ <vovazherelo1@gmail.com>
+Date:   Thu Feb 11 21:52:06 2021 +0300
+
+    .gitignore commit
