@@ -1,0 +1,145 @@
+body {
+	background-image: url(images/feed_bg.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	margin: 0;
+}
+.addPostBtn {
+	display: block;
+	align-self: center;
+	background-color: #f3722c;
+	border-radius: 24px;
+	border: 1px solid #f3722c;
+	cursor: pointer;
+	color: #f9c74f;
+	font-family: Arial;
+	font-size: 30px;
+	width: 40px;
+	height: 40px;
+	text-shadow: 0px 2px 0px #479c3a;
+	margin-left: 15px;
+	box-shadow: 0 4px #999;
+}
+.addPostBtn:active {
+	box-shadow: 0 2px #666;
+  	transform: translateY(2px);
+}
+#feed {
+	width: auto;
+	max-width: 1300px;	
+	height: auto;
+	/*display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-left: 15px;*/
+}
+
+.post {
+	display: inline-block;
+	position: relative;
+	max-width: 600px;
+	width: auto;
+	height: auto;
+	margin: 10px;
+	border-style: 2px solid rgb(0, 0, 0);
+	background-color: rgb(255, 255, 255);
+	box-shadow: 3px 3px 8px rgb(80, 80, 80);
+	border-radius: 10px;
+}
+.postHead {
+	width: 100%;
+	height: auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	padding-top: 5px;
+	background-color: #118ab2;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+
+}
+p.postinfo {
+	margin: 0;
+	margin-left: 3px;
+	font-size: 14pt;
+	display: inline;
+}
+img.icon, img.uploadImg {
+	width: 40px;
+	height: 40px;
+}
+img.icon:hover {
+	position: relative;
+	top: -5px;
+}
+img.main {
+	margin: 1%;
+	width: 100%;
+	background-color: #ffffff;
+	display: block;
+	object-fit: contain;
+}
+.imagePart {
+	margin: 1%;
+	height: 400px;
+	width: 98%;
+	display: flex;
+	position: relative;
+}
+.overlay {
+	position: absolute; 
+	right: 10px;
+	bottom: 10px;
+}
+h1.magName {
+	margin-top: 0;
+	font-size: 20px;
+	font-weight: 4px;
+}
+p.postDescr {
+	margin: 1px;
+	font-size: 14px;
+}
+.postTitle {
+	margin-left: 5px;
+	margin-right: 5px;
+	display: flex;
+	justify-content: space-between;
+}
+.priceBox {
+	background-color: #06d6a0;
+	width: 50px;
+	height: 20px;
+	border-radius: 14px;
+	font-family: Arial;
+	text-align-last: center;
+}
+.postBody {
+	margin: 5px;
+}
+p.tags {
+	font-style: italic;
+	font-size: 14px;
+}
+img.uploadImg {
+	position: absolute;
+	right: 5px;
+	bottom: 5px;
+}
+.searchBox {
+	display: inline-flex;
+	flex-direction: column;
+	align-items: flex-start;
+	margin-left: 15px;
+	background-color: rgb(200, 100, 0); 
+	border-color: rgb(100, 100, 0);
+	border-width: 2px;
+}
+main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: auto;
+}

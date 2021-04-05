@@ -35,3 +35,5 @@ Untracked files:
 	task/
 
 no changes added to commit (use "git add" and/or "git commit -a")
+On branch develop
+nothing to commit, working tree clean

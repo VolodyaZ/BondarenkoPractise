@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>feed</title>
+	<meta charset="utf-8">
+	<link rel = "stylesheet" href = "feed.css">
+	<link rel="stylesheet" href="titleScreen.css">
+	<script src="scripts.js"></script>
+</head>
+<body onload="loadPosts(3)">
+	<header>
+		<div class="header">
+			<div class="container">
+				<a href="editPost.html" class="menuRef">
+					<button class="addPostBtn">+</button>
+				</a>
+			</div>
+			<div class="container">
+				<a href="titleScreen.html" class="menuRef">
+					<p class="menuPage inactivePage">Home</p>
+				</a>
+				<div class="verticalStripe"></div>
+				<a href="feed.html" class="menuRef">
+					<p class="menuPage activePage">Feed</p>
+				</a>
+			</div>
+			<div class="container">
+				<p>username</p>
+				<button class="loginButton" type="button" onclick="location.href='titleScreen.html'" value="">log out</button>
+			</div>
+		</div>
+	</header>
+	<div style="height: 50px;"></div>
+	<div class="searchBox">
+		<div class="sortBlock">Sort by</div>
+		<li class="sortBlock">
+			<input type="checkbox" id="checkbox_name" onchange="onChecked(this,'search_name')">Name
+		</li>
+		<input type="text" id="search_name" disabled>
+		<li class="sortBlock">
+			<input type="checkbox" id="checkbox_date" onchange="onChecked(this,'search_date')">Date
+		</li>
+		<input type="text" id="search_date" disabled>
+		<li class="sortBlock">
+			<input type="checkbox" id="checkbox_tags" onchange="onChecked(this,'search_hashtags')">Hashtags
+		</li>
+		<input type="text" id="search_hashtags" disabled>
+		<li class="sortBlock"><button onclick="onSearchBtnClick()">search</button></li>
+	</div>
+	<main>
+		<div id="feed">
+			<!-- <div class="post">
+				<div class="postHead">
+					<p class="postinfo">username</p>
+					<p class="postinfo">01.01.2002</p>
+					<div>
+						<a href="editPost.html" class="menuRef">
+							<img src="images/editPost.png" class="icon">
+						</a>
+						<img src="images/deletePost.png" class="icon">
+					</div>
+				</div>
+				<div class="imagePart">
+					<img src="images/natgeo.png" class="main">
+					<div class="overlay"><img src="images/likeInactive.png" class="icon"></div>
+				</div>
+				<div class="postTitle">
+					<h1 class="magName">Magazine name</h1>
+					<div class="priceBox">$400</div>
+				</div>
+				<div class="stripe"></div>
+				<div class="postBody">
+					<p class="postDescr">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+					<p class="tags">#tag1 #tag2 #tag3</p>
+				</div>
+				<img src="images/upload.png" class="uploadImg">
+			</div> -->
+		</div>
+		<button type="button" onclick="loadPosts(10)" id="loadbtn">load more posts</button>	
+	</main>
+	<footer>
+		<p>Magazines</p>
+		<p>VladimirZherelo</p>
+		<p>2k9g</p>
+		<p>4contact@mail.com</p>
+		<p>01.01.2020</p>
+	</footer>
+</body>
+</html>

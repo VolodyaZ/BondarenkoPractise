@@ -1,0 +1,112 @@
+html {
+	position: relative;
+	height: 100%;
+}
+body {
+	height: 100%;
+}
+header {
+	width: 100%;
+	position: fixed;
+	z-index: 1;
+}
+.header, footer {
+	height: 50px;
+	width: 100%;
+	background-color: rgb(200, 200, 200);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;	
+}
+footer {
+
+}
+div.container {
+	width: auto;
+	margin: 0;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.sortBlock {
+	margin-left: 5px;
+	margin-right: 5px;
+	display: block;
+}
+
+.stripe {
+	height: 2px;
+	width: all;
+	background-color: rgb(100, 100, 100);
+	margin: 0;
+}
+
+.loginButton {
+	background-color: #44c767;
+	border-radius: 24px;
+	border: 1px solid #31c440;
+	cursor: pointer;
+	color: #ffffff;
+	font-family: Arial;
+	font-size: 14px;
+	padding: 10px 15px;
+	text-shadow: 0px 2px 0px #479c3a;
+	height: 40px;
+	margin-left: 5px;
+	margin-right: 5px;
+	float: right;
+	box-shadow: 0 4px #999;
+}
+.loginButton:active {
+	box-shadow: 0 2px #666;
+  	transform: translateY(2px);
+}
+.footerTxt {
+	display: inline;
+}
+
+.titleScreen {
+	background-image: url(images/titleScreen.png);
+	height: 700px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: flex;
+	flex-direction: column;
+}
+.title {
+	font-family: Arial;
+	font-size: 24pt;
+	font-style: italic;
+	align-self: center;
+	margin-top: 20%;
+}
+.verticalStripe {
+	background-color: rgb(100, 100, 100);
+	width: 2px;
+	height: 20px;
+}
+p.menuPage {
+	margin-left: 5px;
+	margin-right: 5px;
+}
+.activePage {
+	color: rgb(0, 0, 0);
+}
+.inactivePage {
+	color: rgb(170, 170, 170);
+}
+.menuPage:hover {
+	color: rgb(0, 0, 0);	
+	cursor: pointer;
+}
+a.menuRef, a.menuRef:active, a.menuRef:focus {
+	outline: none;
+	text-decoration: none;
+}
+p.about {
+	display: block;
+	align-self: center;
+}
