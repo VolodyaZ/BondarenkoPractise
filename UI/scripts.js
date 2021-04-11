@@ -10,13 +10,13 @@ class Post  {
 }
 
 let posts = [
-	new Post('1', 'descr', new Date('2020-03-17'), '1', 'images/time.png', ['news', 'pop']),
-	new Post('2', 'descr', new Date('2020-03-17'), '1', 'images/time.png', ['news', 'pop']),
-	new Post('3', 'descr', new Date('2020-03-17'), '1', 'images/natgeo.png', ['science', 'nature']),
-	new Post('4', 'descr', new Date('2020-03-17'), '4', 'images/time.png', ['news', 'pop']),
-	new Post('5', 'descr', new Date('2020-03-12'), '5', 'images/natgeo.png', ['science', 'nature']),
-	new Post('6', 'descr', new Date('2020-03-19'), '6', 'images/natgeo.png', ['science', 'nature']),
-	new Post('7', 'descr', new Date('2020-03-17'), '7', 'images/time.png', ['news', 'pop']),
+	new Post(1, 'descr', new Date('2020-03-17'), '1', 'images/time.png', ['news', 'pop']),
+	new Post(2, 'descr', new Date('2020-03-17'), '1', 'images/time.png', ['news', 'pop']),
+	new Post(3, 'descr', new Date('2020-03-17'), '1', 'images/natgeo.png', ['science', 'nature']),
+	new Post(4, 'descr', new Date('2020-03-17'), '4', 'images/time.png', ['news', 'pop']),
+	new Post(5, 'descr', new Date('2020-03-12'), '5', 'images/natgeo.png', ['science', 'nature']),
+	new Post(6, 'descr', new Date('2020-03-19'), '6', 'images/natgeo.png', ['science', 'nature']),
+	new Post(7, 'descr', new Date('2020-03-17'), '7', 'images/time.png', ['news', 'pop']),
 ];
 
 let filteredPosts = getPosts();
@@ -190,8 +190,18 @@ function onChecked(checkbox, objToActivateId) {
 
 function onDelete(deleteBtn) {
 	let postNode = deleteBtn.parentNode.parentNode.parentNode;
-	let id = postNode.getAttribute("data-id");
+	let id = parseInt(postNode.getAttribute("data-id"), 10);
 	let ind = posts.indexOf(posts.find((a) => a.id === id));
 	posts.splice(ind, 1);
 	reloadPosts(lastLoadedPost);
+}
+
+function onSave() {
+	let form = document.forms.editForm;
+	//id is not accurate, needs to be done
+	let str = form.hashtags.value;
+	let tags = str.split(' ');
+	let post = new Post(9, form.description, new Date(), "auth", form.image, tags);
+	addPost(post);
+	window.location.href="feed.html";
 }
