@@ -5,14 +5,15 @@
 	<meta charset="utf-8">
 	<link rel = "stylesheet" href = "feed.css">
 	<link rel="stylesheet" href="titleScreen.css">
-	<script src="scripts.js"></script>
+	<!-- <script src="scripts.js"></script> -->
+	<script src="scriptsMVC.js"></script>
 </head>
-<body onload="loadPosts(3)">
-	<header>
+<body onload="controller.checkUser(); controller.loadPosts(3);">
+	<header id="logged" style="display: none;">
 		<div class="header">
 			<div class="container">
-				<a href="editPost.html" class="menuRef">
-					<button class="addPostBtn">+</button>
+				<a href="editPost.html" class="menuRef" id="addPostBtn">
+					<button class="addPostBtn" onclick="saveEditPostToStorage(null)">+</button>
 				</a>
 			</div>
 			<div class="container">
@@ -25,8 +26,29 @@
 				</a>
 			</div>
 			<div class="container">
-				<p>username</p>
-				<button class="loginButton" type="button" onclick="location.href='titleScreen.html'" value="">log out</button>
+				<p id="username">username</p>
+				<button class="loginButton" type="button" onclick="controller.onLogout()" value="">log out</button>
+			</div>
+		</div>
+	</header>
+	<header id="notLogged">
+		<div class="header">
+			<div class="container">
+				<p style="margin-left: 15px;">Magazines</p>
+			</div>
+			<div class="container">
+				<a href="titleScreen.html" class="menuRef">
+					<p class="menuPage 	inactivePage">Home</p>
+				</a>
+				<div class="verticalStripe"></div>
+				<a href="feed.html" class="menuRef">
+					<p class="menuPage activePage">Feed</p>
+				</a>
+			</div>
+			<div class="container">
+				<button class="loginButton" type = "button" onclick="location.href='login.html'" value="">log in</button>
+				or
+				<button class="loginButton" type = "button"  onclick="location.href='signup.html'" value="">sign up</button>
 			</div>
 		</div>
 	</header>
@@ -34,9 +56,9 @@
 	<div class="searchBox">
 		<div class="sortBlock">Sort by</div>
 		<li class="sortBlock">
-			<input type="checkbox" id="checkbox_name" onchange="onChecked(this,'search_name')">Name
+			<input type="checkbox" id="checkbox_author" onchange="onChecked(this,'search_author')">Author
 		</li>
-		<input type="text" id="search_name" disabled>
+		<input type="text" id="search_author" disabled>
 		<li class="sortBlock">
 			<input type="checkbox" id="checkbox_date" onchange="onChecked(this,'search_date')">Date
 		</li>
@@ -45,7 +67,7 @@
 			<input type="checkbox" id="checkbox_tags" onchange="onChecked(this,'search_hashtags')">Hashtags
 		</li>
 		<input type="text" id="search_hashtags" disabled>
-		<li class="sortBlock"><button onclick="onSearchBtnClick()">search</button></li>
+		<li class="sortBlock"><button type="submit" onclick="controller.onSearchBtnClick()">search</button></li>
 	</div>
 	<main>
 		<div id="feed">
@@ -76,7 +98,7 @@
 				<img src="images/upload.png" class="uploadImg">
 			</div> -->
 		</div>
-		<button type="button" onclick="loadPosts(10)" id="loadbtn">load more posts</button>	
+		<button type="button" onclick="controller.loadPosts(10)" id="loadbtn">load more posts</button>	
 	</main>
 	<footer>
 		<p>Magazines</p>

@@ -50,6 +50,7 @@ body {
 .postHead {
 	width: 100%;
 	height: auto;
+	min-height: 48px;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -60,7 +61,7 @@ body {
 	border-top-right-radius: 10px;
 
 }
-p.postinfo {
+ .postinfo {
 	margin: 0;
 	margin-left: 3px;
 	font-size: 14pt;

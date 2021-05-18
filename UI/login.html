@@ -4,11 +4,12 @@
 	<title>login</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="login.css">
+	<script src="scriptsMVC.js"></script>
 </head>
 <body>
 	<div class="loginBox">
 		<p class="title">Log in</p>
-		<form>
+		<form name="loginForm" enctype="multipart/form-data" method="post" onsubmit="return controller.onLogin()">
 			<div class="content">
 			<div class="box">
 				<p>email</p>
@@ -18,7 +19,7 @@
 				<p>password</p>
 				<input type="text" name="pswrd" required>
 			</div>
-			<button class="loginBtn">log in</button>
+			<input type="submit" class="loginBtn" value="log in">
 			</div>
 		</form>
 	</div>

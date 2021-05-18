@@ -4,12 +4,12 @@
 	<title>Edit post</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="login.css">
-	<script src="scripts.js"></script>
+	<script src="scriptsMVC.js"></script>
 </head>
-<body>
+<body onload="controller.onEditPageLoaded()">
 	<div class="loginBox">
-		<p class="title">Edit post</p>
-		<form name="editForm">
+		<p class="title" id="title">Edit post</p>
+		<form name="editForm" enctype="multipart/form-data" method="post" onsubmit="return controller.onSave()">
 			<div class="dragNdrop">
 				dragndop <br>
 				<input type="file" name="image" accept="image/png, image/jpeg" required>
@@ -17,17 +17,17 @@
 			<div class="content">
 			<div class="box">
 				<p>Name</p>
-				<input type="text" name="name" rows="1" cols="40" required>
+				<input type="text" name="name" required>
 			</div>
 			<div class="box">
 				<p>About</p>
-				<input type="text" name="description" rows="5" cols="40" required>
+				<input type="text" name="description" required>
 			</div>
 			<div class="box">
 				<p>Hashtags</p>
-				<input type="text" name="hashtags" rows="5" cols="40" required>
+				<input type="text" name="hashtags" required>
 			</div>
-			<button class="loginBtn" onclick="onSave()">save</button>
+			<input type="submit" value="save" class="loginBtn">
 			</div>
 		</form>
 	</div>
