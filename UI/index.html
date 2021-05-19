@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<head>
+	<title>sooqa</title>
+	<meta charset="utf-8">
+	<link rel = "stylesheet" href = "titleScreen.css">
+	<script src="scriptsMVC.js"></script>
+</head>
+<body onload="controller.checkUser()">
+	<header id="logged" style="display: none;">
+		<div class="header">
+			<div class="container">
+				<p style="margin-left: 15px;">Magazines</p>
+			</div>
+			<div class="container">
+				<a href="titleScreen.html" class="menuRef">
+					<p class="menuPage activePage">Home</p>
+				</a>
+				<div class="verticalStripe"></div>
+				<a href="feed.html" class="menuRef">
+					<p class="menuPage inactivePage">Feed</p>
+				</a>
+			</div>
+			<div class="container">
+				<p id="username">username</p>
+				<button class="loginButton" type="button" onclick="controller.onLogout()" value="">log out</button>
+			</div>
+		</div>
+	</header>
+	<header id="notLogged">
+		<div class="header">
+			<div class="container">
+				<p style="margin-left: 15px;">Magazines</p>
+			</div>
+			<div class="container">
+				<a href="titleScreen.html" class="menuRef">
+					<p class="menuPage 	activePage">Home</p>
+				</a>
+				<div class="verticalStripe"></div>
+				<a href="feed.html" class="menuRef">
+					<p class="menuPage inactivePage">Feed</p>
+				</a>
+			</div>
+			<div class="container">
+				<button class="loginButton" type = "button" onclick="location.href='login.html'" value="">log in</button>
+				or
+				<button class="loginButton" type = "button"  onclick="location.href='signup.html'" value="">sign up</button>
+			</div>
+		</div>
+	</header>
+	<div style="height: 30px;"></div>
+	<main class="titleScreen">
+		<h1 class="title">Magazines - social network for magazine lovers</h1>
+		<p class="about">Watch other people's posts, like, share or upload your own</p>
+	</main>
+	<footer>
+		<p>Magazines</p>
+		<p>VladimirZherelo</p>
+		<p>2k9g</p>
+		<p>4contact@mail.com</p>
+		<p>01.01.2020</p>
+	</footer>
+</body>

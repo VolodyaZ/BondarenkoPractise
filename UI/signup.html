@@ -4,25 +4,28 @@
 	<title>sign up</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="login.css">
+	<script src="scriptsMVC.js"></script>
 </head>
 <body>
 	<div class="loginBox">
 		<p class="title">Sign up</p>
-		<div class="content">
-			<div class="box">
-				<p>email</p>
-				<input type="text" name="email" required>
-				<p>user name</p>
-				<input type="text" name="uname" required>
+		<form name="signUpForm" enctype="multipart/form-data" method="post" onsubmit="return controller.onRegister()">
+			<div class="content">
+				<div class="box">
+					<p>email</p>
+					<input type="text" name="email" required>
+					<p>user name</p>
+					<input type="text" name="uname" required>
+				</div>
+				<div class="box">
+					<p>password</p>
+					<input type="password" name="pswrd" required>
+					<p>confirm your password</p>
+					<input type="password" name="pswrdConfirm" required>
+				</div>
+				<input type="submit" value="register" class="loginBtn">
 			</div>
-			<div class="box">
-				<p>password</p>
-				<input type="text" name="pswrd" required>
-				<p>confirm your password</p>
-				<input type="text" name="pswrdConfirm" required>
-			</div>
-			<button class="loginBtn">register</button>
-		</div>
+		</form>
 	</div>
 </body>
 </html>

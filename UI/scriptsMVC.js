@@ -183,6 +183,14 @@ class User {
 		this.username = username;
 		this.likedPosts = [];
 	}
+
+	static validateUser(user) {
+		return user.hasOwnProperty('email') &&
+		user.hasOwnProperty('password') &&
+		user.hasOwnProperty('username') &&
+		user.hasOwnProperty('likedPosts');
+	}
+
 }
 
 class UserCollection {
@@ -192,6 +200,24 @@ class UserCollection {
 
 	getUsers() {
 		return this._users;
+	}
+
+	addUser(user) {
+		if (User.validateUser(user)) {
+			this._users.push(user);
+			this.saveToStorage();
+		}
+	}
+
+	deleteUser(email) {
+		for (let i = 0; i < this._users.length; ++i) {
+			if (this._users[i].email === email) {
+				let copy = Post.deepCopy(this._users[i]);
+				this._users.splice(i, 1);
+				this.saveToStorage();
+				return copy;
+			}
+		}
 	}
 
 	addLikedPost(user, id) {
@@ -370,8 +396,15 @@ class PostCollectionController {
 				let post = new Post(storedPost.id, form.name.value , form.description.value, new Date(), storedPost.author, imgSrc, tags);
 				controller._postCollection.editPost(storedPost.id, post);
 			} else {
-				let post = new Post(10, form.name.value , form.description.value, new Date(), user.username, imgSrc, tags);
+				let id = localStorage.getItem("freeId");
+				if (!id) {
+					localStorage.setItem("freeId", 100);
+					id = 100;
+				}
+				id = parseInt(localStorage.getItem("freeId"), 10);
+				let post = new Post(id, form.name.value , form.description.value, new Date(), user.username, imgSrc, tags);
 				controller._postCollection.addPost(post);
+				localStorage.setItem("freeId", ++id);
 			}
 
 			window.location.href = "feed.html";			
@@ -404,6 +437,20 @@ class PostCollectionController {
 		user = null;
 		saveActiveUserToStorage(user);
 		document.location.reload();
+	}
+
+	onRegister() {
+		let form = document.forms.signUpForm;
+		let existingUsers = this._userCollection.getUsers().filter((a) => a.email === form.email.value);
+		if (!existingUsers.length && form.pswrd.value === form.pswrdConfirm.value) {
+			let user = new User(form.email.value, form.pswrd.value, form.uname.value);
+			this._userCollection.addUser(user);
+			saveActiveUserToStorage(user);
+			
+			window.location.href = "titleScreen.html";
+		}
+
+		alert('user with this email is already existing or pasword and confirm password fields are different');
 	}
 
 	checkUser() {
