@@ -28,9 +28,10 @@ div.container {
 }
 
 .sortBlock {
-	margin-left: 5px;
-	margin-right: 5px;
-	display: block;
+	margin: 20px;
+	display: inline;
+	overflow: hidden;
+	page-break-inside: avoid;
 }
 
 .stripe {

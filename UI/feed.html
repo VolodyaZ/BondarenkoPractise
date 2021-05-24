@@ -17,7 +17,7 @@
 				</a>
 			</div>
 			<div class="container">
-				<a href="titleScreen.html" class="menuRef">
+				<a href="index.html" class="menuRef">
 					<p class="menuPage inactivePage">Home</p>
 				</a>
 				<div class="verticalStripe"></div>
@@ -37,7 +37,7 @@
 				<p style="margin-left: 15px;">Magazines</p>
 			</div>
 			<div class="container">
-				<a href="titleScreen.html" class="menuRef">
+				<a href="index.html" class="menuRef">
 					<p class="menuPage 	inactivePage">Home</p>
 				</a>
 				<div class="verticalStripe"></div>
@@ -57,16 +57,16 @@
 		<div class="sortBlock">Sort by</div>
 		<li class="sortBlock">
 			<input type="checkbox" id="checkbox_author" onchange="onChecked(this,'search_author')">Author
+			<input type="text" id="search_author" disabled>
 		</li>
-		<input type="text" id="search_author" disabled>
 		<li class="sortBlock">
 			<input type="checkbox" id="checkbox_date" onchange="onChecked(this,'search_date')">Date
+			<input type="text" id="search_date" disabled>
 		</li>
-		<input type="text" id="search_date" disabled>
 		<li class="sortBlock">
 			<input type="checkbox" id="checkbox_tags" onchange="onChecked(this,'search_hashtags')">Hashtags
+			<input type="text" id="search_hashtags" disabled>
 		</li>
-		<input type="text" id="search_hashtags" disabled>
 		<li class="sortBlock"><button type="submit" onclick="controller.onSearchBtnClick()">search</button></li>
 	</div>
 	<main>

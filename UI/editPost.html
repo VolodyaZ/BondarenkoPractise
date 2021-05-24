@@ -11,8 +11,9 @@
 		<p class="title" id="title">Edit post</p>
 		<form name="editForm" enctype="multipart/form-data" method="post" onsubmit="return controller.onSave()">
 			<div class="dragNdrop">
-				dragndop <br>
-				<input type="file" name="image" accept="image/png, image/jpeg" required>
+				Choose image <br>
+				<input type="file" name="image" accept="image/png, image/jpeg" onchange="onChange(this)" required>
+				<img id="img" src=""style="width: 100%; height: auto;">
 			</div>
 			<div class="content">
 			<div class="box">

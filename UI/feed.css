@@ -130,13 +130,12 @@ img.uploadImg {
 	bottom: 5px;
 }
 .searchBox {
-	display: inline-flex;
-	flex-direction: column;
-	align-items: flex-start;
-	margin-left: 15px;
+	
+	width: 100%;
+	padding: 15px;
 	background-color: rgb(200, 100, 0); 
 	border-color: rgb(100, 100, 0);
-	border-width: 2px;
+	border-width: 4px;
 }
 main {
 	display: flex;

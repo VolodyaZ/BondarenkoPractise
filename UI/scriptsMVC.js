@@ -148,7 +148,7 @@ class PostCollection {
 	//local storage
 	restoreFromStorage() {
 		if (!window.localStorage.getItem('posts')) {
-			populateStorage();
+			this.populateStorage();
 		}
 
 		let posts = JSON.parse(window.localStorage.getItem('posts'));
@@ -388,7 +388,6 @@ class PostCollectionController {
 		reader.onloadend = function () {
 			imgSrc = reader.result;
 			
-			//id is not accurate, needs to be done
 			let str = form.hashtags.value;
 			let tags = str.replaceAll('#', '').split(' ');
 			let storedPost = restoreEditPostFromStorage();
@@ -494,6 +493,18 @@ function saveEditPostToStorage(post) {
 
 function restoreEditPostFromStorage() {
 	return JSON.parse(window.localStorage.getItem("editPost"));
+}
+
+function onChange(imageInput) {
+	let file = imageInput.files[0];
+	let reader = new FileReader();
+	reader.onloadend = function () {
+		document.getElementById('img').src = reader.result;
+	}
+
+	if (file) {
+		reader.readAsDataURL(file);
+	}
 }
 
 ////////////////////////////////////////////////////////////////////
